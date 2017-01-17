@@ -1,0 +1,51 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Events",
+		"_postman_id": "63d0bef0-0e1c-95d5-644e-c2faf7a4092e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/ioevents",
+			"request": {
+				"url": "http://localhost:8080/ioevents/mongo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"TWoEvent\",\n\t\"type\":\"online\",\n\t\"body\":\"{ doctordata: somedoctor }\",\n\t\"tags\" : [\"doctordata\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cassandra",
+			"request": {
+				"url": "http://localhost:8080/ioevents/ioevents/cassandra",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n\t\"name\":\"TWoEvent\",\n\t\"type\":\"online\",\n\t\"body\":\"{ doctordata: somedoctor }\",\n\t\"tags\" : [\"doctordata\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

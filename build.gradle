@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'events-ms'
+	version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+
+    compile("org.springframework.boot:spring-boot-starter")
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-data-cassandra')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-hateoas')
+	compile('org.springframework.boot:spring-boot-starter-jersey')
+
+	compile('org.springframework.boot:spring-boot-starter-web')
+
+	compile group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.18'
+
+	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.4.1'
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	
+	
+}
